@@ -193,5 +193,5 @@ More details: [Choose an open source license][choose-an-open-source-license]
 [beginners-guide-to-python]: <https://wiki.python.org/moin/BeginnersGuide>
 [virtual-environments-and-packages]: <https://docs.python.org/3/tutorial/venv.html>
 [venv-creation-of-virtual-environments]: <https://docs.python.org/3/library/venv.html>
-[installing-python-modules]: (https://docs.python.org/3/installing/index.html)
+[installing-python-modules]: <https://docs.python.org/3/installing/index.html>
 [choose-an-open-source-license]: <https://choosealicense.com/licenses/mit/>
