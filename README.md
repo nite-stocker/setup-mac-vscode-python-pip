@@ -1,164 +1,197 @@
-# Python Development Setup on macOS (VS Code + venv + pip)
+# Python development setup on macOS (VS Code + venv + pip)
 
-## Objective
+## Objectives
 
-Set up a modern, isolated Python development environment on **macOS** using:
-
-- [Visual Studio Code](https://code.visualstudio.com/)  
-- [Python ≥3.10](https://www.python.org/downloads/)  
-- Built-in `venv` module  
-- Package management via `pip`  
-- The [Microsoft Python Extension for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+- Set up a minimal, beginner-friendly Python development environment on macOS using:
+    - VS Code editor
+    - Python extension for VS Code  
+    - The latest Python from python.org  
+    - Built-in venv for environment isolation  
+    - pip for package management
+- Practice README formatting by explaining a stepped process:
+    - "…if you really want to understand something, the best way is to try and explain it to someone else." – Douglas Adams in Dirk Gently's Holistic Detective Agency, 1987
 
 ## Prerequisites
 
-- macOS 12+ (tested on Monterey, Ventura, Sonoma)
-- Homebrew (for installing Python if needed)
+- macOS 12 or later  
+- Admin access to install software  
+- Internet connection
 
-## Install Python 3.10+ with Homebrew
+## Install Python
 
-If you don’t already have Python ≥3.10 installed:
+1. Visit the official [Python download page][mac-python-download].  
+2. Download the latest Python 3 installer for macOS 64-bit.
+3. Open the `.pkg` file and run the installer. Accept the default options.
+4. Open the Terminal app and verify the Python install:
 
-```bash
-brew install python@3.10
-```
-
-Check the installed version:
-
-```bash
+```zsh
 python3 --version
 ```
 
-If Python 3.10 is not your default, you may need to run:
+You should see something like:
 
-```bash
-brew link python@3.10 --force
+```zsh
+Python 3.x.x
 ```
 
-## Create a Project Folder
+(Version numbers may vary depending on the current release.)
 
-```bash
-mkdir my-python-app
-cd my-python-app
-```
+## Install VS Code
 
-## Create a Virtual Environment
+1. Visit the official [VS Code download page][vs-code-download].
+2. Click Download for macOS.
+3. Open the `.zip` file, and drag the Visual Studio Code app to your Applications folder.
+4. (Optional) Add the `code` command to your Terminal shell:
+   - Launch VS Code
+   - Press `Cmd+Shift+P`
+   - Run `Shell Command: Install 'code' command in PATH`
 
-```bash
+## Install the Python extension for VS Code
+
+Install the Python extension by Microsoft to enable Python syntax highlighting, code completion, and debugger integration.
+
+1. Open VS Code  
+2. Go to the Extensions sidebar (`Cmd+Shift+X`)  
+3. Search for "python"  
+4. Click Install on the extension by Microsoft  
+
+This extension also installs Pylance, Pylint, and the Python Debugger. See these individual extensions for more details.
+
+## Set up your project
+
+### Create a new project folder and open it in VS Code
+
+1. Open VS Code  
+2. Press `Cmd+Shift+P` to open the command palette  
+3. Type `New Window` and select File: New Window
+4. In the new window, go to the File menu and choose Open Folder
+5. Navigate to where you'd like to create your project, then:
+   - Click New Folder, name it `test-python-project`
+   - Click Open to open the new folder in VS Code
+
+You should now be working inside your new project folder in an empty VS Code window.
+
+### Use the VS Code terminal
+
+1. In the Terminal menu, choose New Terminal
+2. The integrated terminal will open in the lower panel
+
+All following terminal instructions should be run here.
+
+### Create and activate a virtual environment
+
+Create the virtual environment:
+
+```zsh
 python3 -m venv .venv
+```
+
+Activate it:
+
+```zsh
 source .venv/bin/activate
 ```
 
-> 💡 Use `python -m venv .venv` to avoid relying on a global Python version. This creates a local environment under `.venv`.
+You should see `(.venv)` in the terminal prompt, indicating that the virtual environment is active.
 
-## Upgrade pip and Install Dependencies
+### Select the virtual environment Python interpreter
 
-```bash
-pip install --upgrade pip
-```
+1. Press `Cmd+Shift+P` to open the command palette  
+2. Type "python", then run `Python: Select Interpreter`  
+3. Choose the interpreter from `.venv/bin/python`
 
-Install any packages your project needs. For example:
+### Create a Python script
 
-```bash
-pip install requests
-```
-
-Freeze your requirements for reproducibility:
-
-```bash
-pip freeze > requirements.txt
-```
-
-## Open the Project in Visual Studio Code
-
-```bash
-code .
-```
-
-If `code` is not recognized:
-
-- Open VS Code
-- Press `Cmd+Shift+P`
-- Type and run `Shell Command: Install 'code' command in PATH`
-
-## Install the Python Extension for VS Code
-
-Install the [Python Extension by Microsoft](https://marketplace.visualstudio.com/items?itemName=ms-python.python) via the Extensions sidebar (`Cmd+Shift+X`), or from the [Marketplace](https://marketplace.visualstudio.com/items?itemName=ms-python.python).
-
-## Select the Python Interpreter
-
-1. Press `Cmd+Shift+P`
-2. Run `Python: Select Interpreter`
-3. Choose the interpreter under `.venv/bin/python`
-
-VS Code will automatically use the selected interpreter in the integrated terminal and for running/debugging.
-
-## Configure `.vscode/settings.json` (Optional)
-
-Create `.vscode/settings.json` to automatically set the interpreter:
-
-```json
-{
-  "python.defaultInterpreterPath": ".venv/bin/python"
-}
-```
-
-## Create a Starter File
-
-```bash
-touch main.py
-```
-
-Example contents:
+1. In the File menu, choose New Text File
+2. Save it as `main.py` in the root of your project folder
+3. Add the following code and save:
 
 ```python
 import requests
 
 def main():
-    response = requests.get("https://api.github.com")
-    print(response.json())
+    URL = "https://httpbin.org/get"
+    response = requests.get(URL)
+    data = response.json()
+    my_ip = data.get("origin")
+    print(f"Your IP: {my_ip}")
 
 if __name__ == "__main__":
     main()
 ```
 
-Run it:
+### Upgrade pip
 
-```bash
+In the VS Code terminal:
+
+```zsh
+pip install --upgrade pip
+```
+
+### Install required packages
+
+```zsh
+pip install requests
+```
+
+### Run the script
+
+You can run the script using the VS Code terminal:
+
+```zsh
 python main.py
 ```
 
-## (Optional) Enable Formatters and Linters
+Or click the Play (Run Python File) button at the top of the editor when `main.py` is active.
 
-Install optional tools:
+The script makes a request to httpbin.org and prints your IP address from the response.
 
-```bash
-pip install black ruff
+```zsh
+Your IP: <your IP>
 ```
 
-Enable in VS Code:
+Thank you for following along!
 
-- Open Command Palette → Preferences: Open Settings (JSON)
-- Add:
+## Roadmap
 
-```json
-"python.formatting.provider": "black",
-"editor.formatOnSave": true,
-"python.linting.enabled": true,
-"python.linting.ruffEnabled": true,
-```
+- [ ] Create sibling repo to compare the development experience of Microsoft's VS Code Python extensions with Astral's uv, ty, and ruff:
+  - Python versions  
+  - Installing packages and modules  
+  - Virtual environments  
+  - Static type checking  
+  - Linting  
+  - Formatting  
+  - Packaging
 
-## Additional Resources
+## Contributions
+  
+Contributions are welcome — fork the repo, create a branch, and open a pull request.
 
-- [Python.org: venv Documentation](https://docs.python.org/3/library/venv.html)  
-- [Microsoft Docs: Python in VS Code](https://code.visualstudio.com/docs/python/python-tutorial)  
-- Real Python – [Setting Up Python for VS Code on macOS](https://realpython.com/python-in-vscode/)  
-- Astral – [How to Isolate Python Environments with venv](https://docs.astral.sh/uv/guide/venv/)
+Learn more at GitHub’s [Contributing to a project][contributing-to-a-project].
+
+## Resources
+
+Microsoft Docs  
+- [Getting Started with Python in VS Code][getting-started-with-Python-in-VS-Code]
+
+Python.org 
+- [Beginner's Guide to Python][beginners-guide-to-python]
+- [Virtual Environments and Packages][virtual-environments-and-packages]
+- [venv — Creation of virtual environments][venv-creation-of-virtual-environments]
+- [Installing Python Modules][installing-python-modules]
 
 ## License
 
-MIT
+MIT License: [LICENSE](LICENSE.md)  
+More details: [Choose an open source license][choose-an-open-source-license]
 
-## Code of Conduct
-
-See [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md)
+<!-- Reference links -->
+[mac-python-download]: <https://www.python.org/downloads/mac-osx/>
+[vs-code-download]: <https://code.visualstudio.com/>
+[contributing-to-a-project]: <https://docs.github.com/en/get-started/exploring-projects-on-github/contributing-to-a-project>
+[getting-started-with-Python-in-VS-Code]: <https://code.visualstudio.com/docs/python/python-tutorial>
+[beginners-guide-to-python]: <https://wiki.python.org/moin/BeginnersGuide>
+[virtual-environments-and-packages]: <https://docs.python.org/3/tutorial/venv.html>
+[venv-creation-of-virtual-environments]: <https://docs.python.org/3/library/venv.html>
+[installing-python-modules]: (https://docs.python.org/3/installing/index.html)
+[choose-an-open-source-license]: <https://choosealicense.com/licenses/mit/>
