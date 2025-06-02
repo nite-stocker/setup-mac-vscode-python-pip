@@ -39,10 +39,12 @@ Python 3.x.x
 1. Visit the official [VS Code download page][vs-code-download].
 2. Click Download for macOS.
 3. Open the `.zip` file, and drag the Visual Studio Code app to your Applications folder.
-4. (Optional) Add the `code` command to your Terminal shell:
+4. (Optional) Add the `code` command to your Terminal shell allow:
    - Launch VS Code
    - Press `Cmd+Shift+P`
    - Run `Shell Command: Install 'code' command in PATH`
+
+Adding the VS Code `code` command to your terminal allows you to open files or directories in VS Code directly from the command line. For example, you can use commands like `code .` to open the current directory in VS Code or `code filename` to open a specific file.
 
 ## Install the Python extension for VS Code
 
