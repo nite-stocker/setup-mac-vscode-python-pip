@@ -8,8 +8,6 @@
     - The latest Python from python.org  
     - Built-in venv for environment isolation  
     - pip for package management
-- Practice README formatting by explaining a stepped process:
-    - "…if you really want to understand something, the best way is to try and explain it to someone else." – Douglas Adams in Dirk Gently's Holistic Detective Agency, 1987
 
 ## Prerequisites
 
