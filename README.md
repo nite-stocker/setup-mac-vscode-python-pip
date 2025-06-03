@@ -48,14 +48,14 @@ Adding the VS Code `code` command to your terminal allows you to open files or d
 
 ## Install the Python extension for VS Code
 
-Install the Python extension by Microsoft to enable Python syntax highlighting, code completion, and debugger integration.
+Install the Python extension by Microsoft to enable Python syntax highlighting, code completion, formatting, linting, and debugger integrations.
 
 1. Open VS Code  
 2. Go to the Extensions sidebar (`⌘+Shift+X`)  
 3. Search for "python"  
 4. Click Install on the extension by Microsoft  
 
-This extension also installs Pylance, Pylint, and the Python Debugger. See these individual extensions for more details.
+The Python extension installs the Pylance and Python Debugger extensions. See these individual extensions for more feature details.
 
 ## Set up your project
 
