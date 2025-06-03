@@ -55,19 +55,16 @@ Install the Python extension by Microsoft to enable Python syntax highlighting, 
 3. Search for "python"  
 4. Click Install on the extension by Microsoft  
 
-The Python extension installs the Pylance and Python Debugger extensions. See these individual extensions for more feature details.
+The Python extension installs the Pylance and Python Debugger extensions. See these individual extensions for feature and use details.
 
 ## Set up your project
 
 ### Create a new project folder and open it in VS Code
 
 1. Open VS Code  
-2. Press `⌘+Shift+P` to open the command palette  
-3. Type `New Window` and select File: New Window
-4. In the new window, go to the File menu and choose Open Folder
-5. Navigate to where you'd like to create your project, then:
-   - Click New Folder, name it `test-python-project`
-   - Click Open to open the new folder in VS Code
+2. In the `File` menu, select `Add Folder to Workspace…`
+3. Browse to and select a folder to hold your Python projects
+4. Click `New Folder`, enter a project name such as python-setup, and click `Add`
 
 You should now be working inside your new project folder in an empty VS Code window.
 
