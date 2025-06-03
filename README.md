@@ -80,19 +80,27 @@ All following terminal instructions should be run here.
 
 ### Create and activate a virtual environment
 
-Create the virtual environment:
+#### Create a virtual environment with the `venv` module
 
 ```zsh
 python3 -m venv .venv
 ```
 
-Activate it:
+The Explorer in the navigation pane should show your project folder with the newly-created .venv virtual environment folder.
+
+#### Activate the virtual environment with the `source` command
 
 ```zsh
 source .venv/bin/activate
 ```
 
-You should see `(.venv)` in the terminal prompt, indicating that the virtual environment is active.
+This tells your terminal to run the `activate` script inside the .venv folder. It configures the terminal to use the virtual environment’s Python interpreter and pip package manager. Any packages you install or scripts you run will stay isolated to this project. You’ll see (.venv) appear in your terminal prompt to indicate that it’s active.
+
+You should see something like:
+
+```zsh
+(.venv) your-name@your-computer project-name %
+```
 
 ### Select the virtual environment Python interpreter
 
