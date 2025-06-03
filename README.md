@@ -111,7 +111,7 @@ You should see something like:
 ### Select the virtual environment Python interpreter
 
 1. Press `⌘+Shift+P` to open the command palette  
-2. Type "python", then run `Python: Select Interpreter`  
+2. Type "python", then select `Python: Select Interpreter`  
 3. Choose the interpreter from `.venv/bin/python`
 
 ### Create a Python script
@@ -134,15 +134,37 @@ if __name__ == "__main__":
     main()
 ```
 
-### Upgrade pip
+### Upgrade pip in the virtual environment
 
-In the VS Code terminal:
+`pip` is the Python package manager. It’s included with Python installers from python.org but isn’t part of Python’s standard library.
+
+When you activate a virtual environment, it updates your terminal’s path so that the environment-specific `python` and `pip` are used instead of the system-wide ones.
+
+The [Python Packaging User Guide][python-packaging-user-guide] recommends upgrading pip inside an activated environment to keep it isolated and up to date for your project.
+
+Make sure that `pip` is up-to-date by running:
 
 ```zsh
 pip install --upgrade pip
 ```
 
-### Install required packages
+…and confirming the version and virtual environment location with:
+
+```zsh
+pip --version
+```
+
+You should see something like:
+
+```zsh
+pip 25.1.1 from .venv/lib/python3.12/site-packages/pip (python 3.12)
+```
+
+### Install required package
+
+We'll use the third-party requests package to make a request to a website, and retieve your IP address from the response.
+
+Install the requests package:
 
 ```zsh
 pip install requests
@@ -150,7 +172,7 @@ pip install requests
 
 ### Run the script
 
-You can run the script using the VS Code terminal:
+Run the script using the VS Code terminal:
 
 ```zsh
 python main.py
@@ -202,6 +224,7 @@ More details: [Choose an open source license][choose-an-open-source-license]
 <!-- Reference links -->
 [mac-python-download]: <https://www.python.org/downloads/mac-osx/>
 [vs-code-download]: <https://code.visualstudio.com/>
+[python-packaging-user-guide]: <https://packaging.python.org/en/latest/>
 [contributing-to-a-project]: <https://docs.github.com/en/get-started/exploring-projects-on-github/contributing-to-a-project>
 [getting-started-with-Python-in-VS-Code]: <https://code.visualstudio.com/docs/python/python-tutorial>
 [beginners-guide-to-python]: <https://wiki.python.org/moin/BeginnersGuide>
