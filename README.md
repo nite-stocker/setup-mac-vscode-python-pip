@@ -160,9 +160,9 @@ You should see something like:
 pip 25.1.1 from .venv/lib/python3.12/site-packages/pip (python 3.12)
 ```
 
-### Install required package
+### Install a package
 
-We'll use the third-party requests package to make a request to a website, and retieve your IP address from the response.
+We'll use the third-party requests package to make a request to a website, and retrieve your IP address from the response.
 
 Install the requests package:
 
@@ -172,13 +172,13 @@ pip install requests
 
 ### Run the script
 
-Run the script using the VS Code terminal:
+Run the script with the `python` command:
 
 ```zsh
 python main.py
 ```
 
-Or click the Play (Run Python File) button at the top of the editor when `main.py` is active.
+…or click the Run Python File "Play" button at the top of the editor when `main.py` is active.
 
 The script makes a request to httpbin.org and prints your IP address from the response.
 
