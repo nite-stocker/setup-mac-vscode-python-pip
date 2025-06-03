@@ -41,7 +41,7 @@ Python 3.x.x
 3. Open the `.zip` file, and drag the Visual Studio Code app to your Applications folder.
 4. (Optional) Add the `code` command to your Terminal shell allow:
    - Launch VS Code
-   - Press `Cmd+Shift+P`
+   - Press `⌘+Shift+P`
    - Run `Shell Command: Install 'code' command in PATH`
 
 Adding the VS Code `code` command to your terminal allows you to open files or directories in VS Code directly from the command line. For example, you can use commands like `code .` to open the current directory in VS Code or `code filename` to open a specific file.
@@ -51,7 +51,7 @@ Adding the VS Code `code` command to your terminal allows you to open files or d
 Install the Python extension by Microsoft to enable Python syntax highlighting, code completion, and debugger integration.
 
 1. Open VS Code  
-2. Go to the Extensions sidebar (`Cmd+Shift+X`)  
+2. Go to the Extensions sidebar (`⌘+Shift+X`)  
 3. Search for "python"  
 4. Click Install on the extension by Microsoft  
 
@@ -62,7 +62,7 @@ This extension also installs Pylance, Pylint, and the Python Debugger. See these
 ### Create a new project folder and open it in VS Code
 
 1. Open VS Code  
-2. Press `Cmd+Shift+P` to open the command palette  
+2. Press `⌘+Shift+P` to open the command palette  
 3. Type `New Window` and select File: New Window
 4. In the new window, go to the File menu and choose Open Folder
 5. Navigate to where you'd like to create your project, then:
@@ -104,7 +104,7 @@ You should see something like:
 
 ### Select the virtual environment Python interpreter
 
-1. Press `Cmd+Shift+P` to open the command palette  
+1. Press `⌘+Shift+P` to open the command palette  
 2. Type "python", then run `Python: Select Interpreter`  
 3. Choose the interpreter from `.venv/bin/python`
 
