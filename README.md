@@ -71,9 +71,8 @@ You should now be working inside your new project folder in an empty VS Code win
 ### Use the VS Code terminal
 
 1. In the Terminal menu, choose New Terminal
-2. The integrated terminal will open in the lower panel
 
-All following terminal instructions should be run here.
+The VS Code integrated terminal will open in the lower panel. All following terminal instructions can be run here.
 
 ### Create and activate a virtual environment
 
