@@ -62,7 +62,7 @@ The Python extension installs the Pylance and Python Debugger extensions. See th
 ### Create a new project folder and open it in VS Code
 
 1. Open VS Code  
-2. In the `File` menu, select `Add Folder to Workspace…`
+2. In the `File` menu, select `Open Folder…`
 3. Browse to and select a folder to hold your Python projects
 4. Click `New Folder`, enter a project name such as python-setup, and click `Add`
 
